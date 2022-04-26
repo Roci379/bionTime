@@ -1,4 +1,3 @@
-# Boilerplate Portal for BMK Projects
 # PHP 8
 We are going to use PHP version 8.0 for this proyect.
 
@@ -81,20 +80,6 @@ php8.0 artisan migrate:fresh --seed
 php8.0 artisan db:seed
 ```
 
-
-@Javi: This is my particular seeder for test
-
-php8.0 artisan db:seed --class=JaviSeeder
-
-
-
-# Debug
-
-@Javi: I like the clasic stderr
-
-```
-LOG_CHANNEL=stderr
-```
 
 
 # Steps 
