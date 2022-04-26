@@ -1,0 +1,299 @@
+.timer__content {
+    grid-area: ctnt;
+    display: grid; 
+    grid-gap: 2rem;
+
+    &.list{
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "ddlist"
+            "tmln"
+            "rcrds";
+    }
+    
+    &.daily{
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "ddlist"
+            "gant";
+            
+    }
+
+    &.weekly{
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "ddlist"
+            "gantweek";
+
+    }
+}
+
+.records__ddlist {
+    grid-area: ddlist;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+    .help__link{
+        grid-area: help;
+        font-size: 12pt;
+        color: $frst_green_std;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 2vw;
+        p{
+            color: $scnd_green_std;
+            padding: 1vw;
+        }
+    }
+    
+    &.list{
+        justify-content: space-between;
+
+    }
+    &.daily{
+        justify-content: space-between;
+    }
+
+    &.weekly{
+        justify-content: space-between;
+    }
+    .dailyTimer__day{
+        grid-area: year;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-around;
+
+        .dailyTimer__button{
+            background-color: white; /* Green */
+            border: 2px solid $frst_green_std; /* Green */
+            color: $frst_green_std;
+            padding: 2px;
+            text-align: center;
+            justify-content: center;
+            text-decoration: none;
+            display: flex;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 50%;
+
+            &#buttonRight{
+                border: 2px solid lightgrey; 
+                color: lightgrey;
+            }
+        }
+
+        .dailyTimer__text{
+            color: $brown_std;
+            font-size: 12pt;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+
+    .record__selector {
+        text-transform: capitalize;
+        border-color: $frst_green_std;
+        background-color: white;
+        font-size: 14pt;
+        border-radius: 4px;
+        font-weight: normal;
+        color: $brown_std;
+        width: 150px;
+    }
+    .recordType {
+        text-transform: capitalize;
+    }
+}
+
+
+.timeline {
+    grid-area: tmln;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.timer__records {
+    grid-area: rcrds;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    padding: 30px 1rem;
+}
+
+
+.bmk__records {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .bmk__record__modify__mode{
+        display: grid;
+        
+        .button__modify{
+            grid-area: button;
+            display:flex; 
+            align-items: center;
+            justify-content: space-around;
+            font-size: 14pt;
+            font-weight: bold;
+            color: $brown_std;
+            .timer__button__icon{
+                padding-left:10px;
+                cursor:pointer;
+            }
+        }
+        
+    }
+}
+
+.norecords__message{
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    color: $brown_std;
+    font-size: 12pt;
+    height: 40vh;
+}
+.bmk__record{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin: 10px 0;
+    margin-bottom: 30px;
+
+}
+
+
+.record__unit {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+    .timer__button__icon{
+        padding-left: 8pt;
+        margin-top: 10pt;
+        cursor: pointer;
+
+        &.edit__icon {
+            color: $brown_std; 
+        }
+
+        &.delete__icon {
+            color: $frst_orange_std;
+        }
+    } 
+}
+
+.record__line {
+    border: 1px solid $brown_std_difused;
+
+    .modify__record{
+        justify-content: center;
+        border: transparent;
+        display: flex;
+
+        .timepicker__record{
+            font-size: 14pt;
+            display: flex;
+            border: transparent;
+            justify-content: center;
+        }
+    }
+    
+}
+
+
+
+.type__symbol, .record__content {
+    text-align: center;
+    padding: 10px; 
+    background: white;
+    border: none;
+}
+
+
+.type__symbol {
+    &.work {
+        color: $frst_green_std;
+    }
+
+    &.break {
+        color: $frst_orange_std;
+        .stop{
+            color:$scnd_orange_std; 
+        }
+        .pause{
+            color:$frst_orange_std;
+        }
+    }
+
+    
+
+}
+
+
+
+.record__date {
+    font-size: 14pt;
+    font-weight: bold;
+    color: $brown_std;
+    align-items: flex-start;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+.record__content {
+    font-size: 16pt;
+    //visibility: visible;
+    &.wrk {
+        color: $frst_green_std;
+        font-weight: normal;
+    }
+
+    &.brk {
+        color: $frst_orange_std;
+        font-weight: normal;
+
+        &.stop{
+            color:$scnd_orange_std;
+        }
+        &.pause{
+            color:$frst_orange_std;
+        }
+    }
+
+    &.total__hours {
+        color: $brown_std;
+        font-weight: bold;
+    }
+
+}
+
+.modify__record{
+   // visibility: hidden;
+}
+
+
+  
+  
+

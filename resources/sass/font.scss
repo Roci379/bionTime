@@ -1,0 +1,66 @@
+.title {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+
+    &-light {
+        @extend .title;
+        color: #EAEAEA;
+    }
+
+    &-dark {
+        @extend .title;
+        color: #323232;
+    }
+}
+
+
+.subtitle {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+
+    &-light {
+        @extend .subtitle;
+        color: #EAEAEA;
+    }
+
+    &-dark {
+        @extend .subtitle;
+        color: #323232;
+    }
+
+    &-alert {
+        @extend .subtitle;
+        color: #a51b27;
+    }
+}
+
+.text {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+
+    &-light {
+        @extend .text;
+        color: #EAEAEA;
+    }
+
+    &-dark {
+        @extend .text;
+        color: #323232;
+    }
+
+}
+
+
+/*COLORS*/
+.gold {
+    color: $gold;
+}
+
+.bold {
+    font-weight: bold;
+}

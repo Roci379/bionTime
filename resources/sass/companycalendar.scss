@@ -1,0 +1,130 @@
+.companycalendar__upbar{
+    grid-area: ub;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "lgnd ttl help"
+                         "lgnd incp help";
+
+    .help__link{
+        grid-area: help;
+        font-size: 12pt;
+        color: $frst_green_std;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        padding-right: 10vw;
+                
+        p{
+            color: $scnd_green_std;
+            padding: 1vw;
+        }
+    }
+
+    .companycalendar__legend{
+        grid-area: lgnd;
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding: 30px;
+        padding-left: 35%;
+        border: $brown_std_difused solid 2px;
+        border-radius: 5px;
+        margin: 25px;
+
+        .companycalendar__element{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .color {
+                width: 40px;
+                height: 40px;
+                margin-right: 20px;
+            }
+            .value{
+                text-transform: capitalize;
+                color: $brown_std;
+            }
+        }
+    }
+    .companycalendar__title{
+        grid-area: ttl;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 15px;
+
+        .companycalendar__title__content{
+            width: 350px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 22pt;
+            font-weight: bold;
+            color: $frst_green_std;
+                
+            .companycalendar__text {
+                text-transform: uppercase;
+                color: $frst_green_std;
+            }
+        }
+    }
+
+    .companycalendar__dropdown{
+        grid-area: ddl;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 15%;
+
+        .calendar__selector {
+            text-transform: capitalize;
+            border-color: $frst_green_std;
+            background-color: white;
+            font-size: 14pt;
+            border-radius: 4px;
+            font-weight: normal;
+            color: $brown_std;
+            width: 250px;
+            .recordType {
+                text-transform: capitalize;
+            }
+        }
+      
+    }
+
+    .companycalendar__incompatibilities{
+        grid-area: incp;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .companycalendar__incompatibilities__button{
+            width: 12vw;
+            height: 4vh;
+            background-color: $scnd_green_std;
+            color: $yellow;
+            border-radius: 6px;
+            border-color: $scnd_green_std;
+            font-size: 10pt;
+            text-transform: capitalize;
+        }
+    }
+}
+
+
+.companycalendar__content{
+    grid-area: ctnt;
+    display: flex; 
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 10vh;
+}
+

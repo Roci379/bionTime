@@ -1,0 +1,66 @@
+.dashboard__content {
+    grid-area: ctnt;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "tchart wchart"
+        "events events"
+        "nth help";
+    gap: 30px;
+
+    .help__link{
+        grid-area: help;
+        font-size: 12pt;
+        color: $frst_green_std;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 2vw;
+        p{
+            color: $scnd_green_std;
+            padding: 1vw;
+        }
+    }
+}
+
+.donut-charts {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        font-size: 14pt;
+        font-weight: bold;
+        color: $brown_std;
+    }
+
+    &.today__chart {
+        grid-area: tchart;
+    }
+    
+    &.week__chart {
+        grid-area: wchart;
+    }
+
+}
+
+
+.event__table {
+    grid-area: events; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noevents__message{
+    font-size: 12pt; 
+    color: $brown_std;
+}
+
+  
+  
+

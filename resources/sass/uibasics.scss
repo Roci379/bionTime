@@ -1,0 +1,896 @@
+/* Color palette */
+
+$yellow: #ECDFBF;
+$frst_green_std: #97BC8C;
+$scnd_green_std: #71897B;
+$brown_std: #665D69;
+$frst_orange_std: #DE9C87;
+$scnd_orange_std: #F5CDB7;
+
+$stdpadding: 30px;
+$sidebarwidth: 300px;
+
+
+/* FichajeMenu */
+
+.leftbar__menu{
+    grid-area: sb;
+    position: fixed;
+    height: 100vh;
+    width: $sidebarwidth;
+    background-color: $scnd_green_std;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    z-index: 1;
+    
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .profile__image{
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+    }
+} 
+
+.calendar__items {
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 9pt;
+
+}
+.menuItem {
+    font-family: Montserrat, sans-serif;
+    font-size:medium;
+    font-weight: bold;
+    
+    display: flex;
+    align-items: center;
+
+    &.myProfile {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        padding-bottom: 20px;
+    }
+
+    a {
+        color: $yellow;
+        text-transform:uppercase;
+
+        &.profile{
+            text-transform: capitalize;
+        }
+    }
+
+    .calendar__item {
+        grid-area: types;
+        text-transform: capitalize;
+        font-weight: normal;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+}
+
+
+.menuIcon {
+    margin-right: 10px;
+}
+
+.leftMenu {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+
+/* UpperMenu */
+
+.upperMenu {
+    box-shadow: 0 0 0 0.1rem $scnd_green_std;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: $stdpadding;
+
+    .upperMenu__arrow {
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+        left: 50%;
+    }
+
+    &.exp {
+        .upperMenu__content {
+            height: 100%;
+            grid-template-columns: auto auto auto;
+            gap: 30px;
+        }
+    }
+
+    &.comp {
+        .upperMenu__content {
+            grid-template-columns: 380px auto;
+            grid-gap: $stdpadding;
+            justify-content: space-between;
+
+            .upperMenu__hours {
+                display: none;
+            }
+        }
+    }
+}
+
+.exp {
+    height: 220px;
+}
+
+.comp {
+    height: 165px;
+}
+
+.upperMenu__content {
+    width: 100%;
+    display: grid;
+}
+
+
+.arrowMenu__button {
+    width: 100px; 
+    height: 40px;
+    border: $brown_std;
+    box-shadow: 0 0 0 0.1rem #71897b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    .arrowIcon {
+        color: $frst_green_std;
+    }
+}
+
+
+.upperMenu__hours{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.hours_timerType{
+    grid-area: htt;
+}
+
+.hours__status {
+    grid-area: hsts;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+}
+
+.upperMenu__button {
+    //padding: $stdpadding;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-height: 180px;
+    }
+}
+
+
+
+.hours__timerType {
+    padding: 0;
+    //margin-left: 100px;
+    display: flex;
+    align-items: center;
+}
+.hours__selector {
+    border-color: $frst_green_std;
+    background-color: white;
+    font-size: 14pt;
+    border-radius: 4px;
+    font-weight: bold;
+    color: $brown_std;
+    width: 100%;
+}
+
+.hourTypes {
+    color: $scnd_green_std;
+    //margin-left: 20px;
+    font-size: 16pt;
+    text-transform: capitalize;
+    padding-top: 5px;
+    //padding-left: 10px;
+
+    &:first-child {
+        font-size: 12pt;
+    }
+}
+
+.upperMenu__tracker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $frst_orange_std;
+    border-radius: 15px;
+}
+
+.tracker__elements {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 22px;
+}
+
+.tracker__values {
+    display: grid;
+    grid-template-columns: 1fr 22px 1fr 22px 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.timer__elements {
+    color: $scnd_orange_std;
+    font-size: 20pt;
+    text-align: center;
+}
+
+.timer__values {
+    color: $scnd_green_std;
+    font-size: 50pt;
+    text-align: center;
+}
+
+
+
+/* TimerButton */
+
+$timer_dim: 150px;
+$timer_button_dim: 36px;
+$timer_border: $brown_std;
+$timer_border_width: 4px;
+$bccolor: $frst_orange_std;
+
+
+
+@mixin circleradius {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+@mixin timerborder {
+    border: $timer_border_width solid $timer_border;
+}
+
+@mixin flex_rc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.bmk__timer {
+    display: grid; 
+    grid-template-rows: 2fr 0.1fr;
+    position: relative;
+    width: $timer_dim;
+    height: $timer_dim;
+
+    p{
+        color: $frst_orange_std;
+        font-weight: bold;
+        font-size: 9pt;
+    }
+
+    .timer__circle {
+        @include circleradius();
+        @include timerborder();
+        @include flex_rc ();
+        width: $timer_button_dim;
+        height: $timer_button_dim;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: white;
+
+
+        .timer__button__icon {
+            color: $bccolor;
+            fill: $bccolor;
+        }
+
+        
+
+        &.timer__playpause {
+            width: $timer_dim / 1.85;
+            height: $timer_dim / 1.85;
+
+            position: absolute;
+            top: 20px;
+            right: 10px;
+
+            &:after,
+            &:before {
+                position: absolute;
+                content: '';
+                width: 30px;
+                height: $timer_border_width;
+                background-color: $timer_border;
+            }
+
+            &::before {
+                transform-origin: 100% 100%;
+                top: 0;
+                width: 36px;
+                right: 100%;
+                transform: translateY(20px) translateX(0px) rotate(30deg);
+            }
+            &::after {
+                transform-origin: 0 0;
+                transform: translate(30px) rotate(80deg);
+                top: 100%;
+            }
+        }
+
+        &:last-child {
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+        }
+
+        &:hover {
+            background-color: $timer_border;
+
+            .timer__button__icon {
+                color: white;
+            }
+        }
+    }
+
+    [data-title]:hover:after {
+        opacity: 1;
+        transition: all 0.1s ease 0.5s;
+        visibility: visible;
+    }
+    [data-title]:after {
+        content: attr(data-title);
+        background-color: $scnd_orange_std;
+        color: $brown_std;
+        font-size: 200%;
+        position: absolute;
+        padding: 1px 5px 2px 5px;
+        bottom: -1.6em;
+        left: -20%;
+        white-space: nowrap;
+        box-shadow: 1px 1px 3px $brown_std;
+        opacity: 0;
+        border: 1px solid $brown_std;
+        z-index: 99999;
+        visibility: hidden;
+        border-radius: 4px;
+    }
+    [data-title] {
+        position: relative;
+    }
+   
+
+
+}
+
+
+/* TimerButtonCompacted */
+
+$timer_dim: 150px;
+$timer_button_dim: 36px;
+$timer_border: $brown_std;
+$timer_border_width: 4px;
+$bccolor: $frst_orange_std;
+
+
+
+@mixin circleradius {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+@mixin timerborder {
+    border: $timer_border_width solid $timer_border;
+}
+
+@mixin flex_rc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.upperMenu {
+    &.comp {
+        .bmk__timer {
+            position: relative;
+            width: $timer_dim;
+            height: $timer_dim;
+        
+            .timer__circle {
+                @include circleradius();
+                @include timerborder();
+                @include flex_rc ();
+                width: $timer_button_dim;
+                height: $timer_button_dim;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                background-color: white;
+                transform: translateY(-50%);
+                left: 0;
+        
+                .timer__button__icon {
+                    color: $bccolor;
+                    fill: $bccolor;
+                }
+        
+        
+                &.timer__playpause {
+                    width: $timer_dim / 1.85;
+                    height: $timer_dim / 1.85;
+        
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+        
+                    &:after,
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        width: 30px;
+                        height: $timer_border_width;
+                        background-color: $timer_border;
+                    }
+        
+                    &::before {
+                        transform-origin: 100% 100%;
+                        top: 0;
+                        width: 36px;
+                        right: 100%;
+                        transform: translateY(33px) translateX(-3px) rotate(0deg);
+                    }
+                    &::after {
+                        transform-origin: 0 0;
+                        transform: translateY(-40px) translateX(52px) rotate(0deg);
+                        top: 100%;
+                    }
+                }
+        
+                &:first-child {
+                    position: absolute;
+                    top: 50%;
+                    left: -70px;
+                }
+        
+                &:last-child {
+                    position: absolute;
+                    top: 50%;
+                    left: initial;
+                    right: 8px;
+                }
+        
+                &:hover {
+                    background-color: $timer_border;
+        
+                    .timer__button__icon {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/* EventTable */
+
+.eventTable {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+.std__table {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &.management__std__table {
+        width: 100%;
+
+        .management__button__icon{
+            cursor: pointer;
+        }
+    }
+  }
+
+
+td, th {
+    border: 1px solid #B9B9B9;
+    text-align: center;
+    padding: 10px; 
+}
+
+
+.std__table__title {
+    background: $scnd_green_std;
+    color: $yellow;
+    font-weight: bold;
+    font-size: 16pt;
+    text-transform: uppercase;
+}
+
+.std__table__content {
+    color: $brown_std;
+    font-size: 12pt;
+}
+
+
+
+
+/* TimeLine */
+
+.timeLine {
+    width: 90%;
+    gap: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    grid-template-areas: 
+        "wkt brt nwkt"
+        "wkd brk nwkd";
+    
+}
+
+.timeline__title {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 12pt;
+    padding-bottom: 7px;
+
+    &.title__worked {
+        color: $frst_green_std;
+        grid-area: wkt;
+        
+    }
+    &.title__break {
+        color: $frst_orange_std;
+        grid-area: brt;
+    }
+    &.title__notworked {
+        color: $scnd_orange_std;
+        grid-area: nwkt;
+    }
+}
+
+.timeline__container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    width: 100%;
+    padding: 0 1rem;
+
+    .timeline__stage {
+        &.timeline__worked {
+            .title {
+                color: $frst_green_std;
+            }
+
+            .timeline__line {
+                background-color: $frst_green_std;
+            }
+        }
+        
+        
+        &.timeline__break {
+            .title {
+                color: $frst_orange_std;
+            }
+            .timeline__line {
+                background-color: $frst_orange_std;
+            }
+        }
+        
+        &.timeline__notworked {
+            .title {
+                color: $scnd_orange_std;
+            }
+            .timeline__line {
+                background-color: $scnd_orange_std;
+            }
+        }
+    }
+}
+
+.timeline__line {
+    border-radius: 4px;
+    height: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &.timeline__worked {
+        grid-area: wkd;
+        background-color: $frst_green_std;
+    }
+    
+    
+    &.timeline__break {
+        grid-area: brk;
+        background-color: $frst_orange_std;
+    }
+    
+    &.timeline__notworked {
+        grid-area: nwkd;
+        background-color: $scnd_orange_std;
+    }
+}
+
+
+/* Gantt */
+$yaxisWidth: 120px;
+.bmk__gant {
+    &.bmk__gant--simple {
+        padding: 0 1rem;
+
+        header {
+            display: grid;
+            grid-template-columns: $yaxisWidth 1fr;
+        }
+
+        main {
+            display: grid;
+
+            .gant__record {
+                display: grid;
+                grid-template-columns: $yaxisWidth 1fr;
+                border-right: 1px solid $brown_std_difused;
+
+                &:first-child {
+                    border-top: 1px solid $brown_std_difused;
+                }
+
+                &:last-child {
+                    border-bottom: 1px solid $brown_std_difused;
+                }
+                
+                .gant__record__yaxis {
+                    padding: 1rem 1rem;
+                    background-color: $frst_orange_std;
+                    
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                .gant__record__content {
+                    display: grid;
+
+                    &.record__content--start,
+                    &.record__content--unpause {
+                        background-color: $frst_green_std;
+                    }
+                }
+
+                .gant__subrecord {
+                    position: relative; 
+
+                    &.gant__subrecord--start,
+                    &.gant__subrecord--unpause {
+                        background-color: $frst_green_std;
+
+                        &:after {
+                            position: absolute;
+                            content: '';
+                            width: 100%;
+                            height: 1px;
+                            background: $frst_green_std;
+                            left: 0;
+                            top: 100%;
+                        }
+                    }
+
+                    &.gant__subrecord--pause {
+                        background-color: $frst_orange_std;
+                    }
+
+                    data {
+                        color: $yellow;
+                        font-size: 0.875rem;
+                        font-weight: bold;
+                        margin-top: 0.5rem;
+
+                        span {
+                            font-size: 0.75rem;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.gant__day__head {
+    display: flex;
+    gap: 1rem;
+
+    span {
+        font-size: 3rem;
+        color: $frst_orange_std;
+        font-weight: bold;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        padding-bottom: 0.2rem;
+
+        p {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        data {
+            color: $brown_std_difused;
+            font-size: 0.875rem;
+        }
+    }
+}
+
+.bmk__gant__week__container{
+    display: flex; 
+    flex-direction: row;
+    //flex-wrap: wrap;
+    max-width: calc(100vw - #{$sidebarwidth} - 60px - 1rem);
+    overflow-x: auto;
+    padding-bottom: 30px;
+
+}
+
+.bmk__gant__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .bmk__gant--simple {
+        width: 320px;
+
+        main {
+            min-height: 250px;
+            border-left: 1px solid $brown_std_difused;
+
+            .gant__record {
+                .gant__record__content {
+                    background-color: #f3f3f3;
+                }
+            }
+        }
+
+        &.bmk__gant--no_records {
+            margin-bottom: 1rem;
+            header {
+                grid-template-columns: 1fr;
+                border-bottom: 1px solid $brown_std_difused;
+            }
+
+            .bmk__empty__record{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                padding: 60px 20px;
+                color: $brown_std;
+                border: 1px solid $brown_std_difused;
+                border-top: none;
+                height: 250px;
+    
+                .bmk__empty__record__text{
+                    font-size: 14pt;
+                    color: $brown_std;
+                    margin-top: 1rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/* Calendar */
+.bmk__holiday__container {
+    margin-top: 1rem;
+}
+
+.bmk__holiday {
+    padding: 0 1rem;
+
+    header {
+        display: grid;
+        grid-template-columns: $yaxisWidth 1fr;
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 175px);
+        }
+    }
+
+    main {
+        display: grid;
+
+        .user__record {
+            display: grid;
+            grid-template-columns: $yaxisWidth 1fr;
+            
+            .user__record__yaxis {
+                padding: 1rem 1rem;
+                background-color: $frst_orange_std;
+                text-transform: capitalize;
+                p {
+                    text-align: center;
+                }
+            }
+
+            .user__record__content {
+                display: grid;
+                grid-template-columns: repeat(7, 175px);
+
+                .record__day {
+                    border-right: 1px solid $brown_std_difused;
+                    border-top: 1px solid $brown_std_difused;
+
+                    &.free {
+                        background-color: $scnd_orange_std;
+                    }
+                    &.medical{
+                        background-color: $frst_green_std;
+                    }
+                    &.other{
+                        background-color: $yellow;
+                    }
+                }
+            }
+
+            &:last-child {
+                .user__record__content {
+                    border-bottom: 1px solid $brown_std_difused;
+                }
+            }
+        }
+    }
+}

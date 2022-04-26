@@ -1,0 +1,349 @@
+.calendarBar {
+    grid-area: ub;
+    box-shadow: 0 0 0 0.1rem $scnd_green_std;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: $stdpadding;
+
+    .calendarBar__content{
+        display: grid;
+        grid-template-areas: "lgnd ttl evnts";
+        grid-template-columns: 0.5fr 1fr 1fr;
+        height: 80%;
+
+        .calendarBar__legend{
+            grid-area: lgnd; 
+            border: $brown_std;
+            display: grid; 
+            grid-template-rows: 1fr 1fr 1fr;
+
+            .calendarBar__legend__element{
+                display: grid; 
+                grid-template-columns: 1fr 1.5fr;
+
+                div{
+                    margin-right: 2vw;
+                    margin-left: 2vw;
+                }
+                p{
+                    display: flex;
+                    align-items: center;
+                }
+
+            }
+            
+        }
+        .calendarBar__year{
+            grid-area: year;
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+            justify-content: space-around;
+
+            .calendarBar__button{
+                background-color: white; /* Green */
+                border: 2px solid $frst_green_std; /* Green */
+                color: $frst_green_std;
+                padding: 2px;
+                text-align: center;
+                justify-content: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 20px;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+
+            .calendarBar__text{
+                color: $brown_std;
+                font-size: 20pt;
+                font-weight: bold;
+            }
+        }
+
+        .calendarBar__title{
+            grid-area: ttl;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .calendarBar__title__content{
+                width: 350px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                font-size: 22pt;
+                font-weight: bold;
+                color: $frst_green_std;
+
+                .calendarBar__text{
+                    text-transform: uppercase;
+                    color: $frst_green_std;
+                }
+
+            }
+        }
+
+        .calendarBar__events{
+            grid-area: evnts;
+
+            .calendarBar__events__title{
+                font-size: 14pt;
+                color: $brown_std;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding-bottom: 15px;
+            }
+
+            .calendarBar__events__event{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                font-size: 12pt;
+                padding: 2px;
+                padding-bottom: 10px;
+                color: $scnd_green_std;
+            }
+        }
+
+    }
+}
+
+.mycalendar__content{
+    grid-area: ctnt;
+/*     display: grid;
+    grid-template-rows: 5fr 1.5fr; */
+}
+
+
+.mycalendar__months {
+    display: grid;
+/*     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; */
+    padding: 30px;
+    padding-left: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mycalendar__add__vacation{
+    position: absolute;
+    width: 40vw;
+    height: 75vh;
+    background-color: white;
+    margin-left: 40vw;
+    margin-top: 12vh;
+    box-shadow: 0 0 0 0.1rem $scnd_green_std;
+    border-radius: 20px;
+    z-index: 99999;
+    visibility: hidden;
+
+    display: grid; 
+    grid-template-areas: "exit" "ttl" "form" "button";
+    grid-template-rows: 0.2fr 0.5fr 4fr 1fr;
+
+    .exit__button{
+        grid-area: exit; 
+        width: 100%; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-end; 
+        justify-content: flex-start;
+        padding: 5%;
+        .vacation__exit__icon{
+            color: $frst_orange_std;
+            cursor: pointer;
+        }
+    }
+
+    .vacation__title{
+        grid-area: ttl;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 3vh;
+
+        .vacation__title__text{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 350px;
+            font-size: 22pt;
+            font-weight: bold;
+            color: $frst_orange_std;
+            text-transform: uppercase;
+        }
+    }
+
+    .addvacation__form__line{
+        grid-area: form;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        .addvacation__error__message{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            color: #d64f26;
+            font-size: 12pt;
+            font-weight: bold;
+        }
+        .addvacation__form__element{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            color: $brown_std;
+            justify-content: center;
+            align-items: center;
+            padding: 7% 10% 7% 10%;
+            font-size: 14pt;
+
+            .addvacation__form__input{
+                border-radius: 4px;
+                color: $brown_std;
+                border-color: $scnd_orange_std;
+                width:100%;
+                height: 100%;
+            }
+
+            .type__selector{
+                border-radius: 4px;
+                color: $brown_std;
+                border-color: $scnd_orange_std;
+                text-transform: capitalize;
+                width: 100%;
+                height: 140%;
+                background-color: white;
+                font-size: 12pt;
+            }
+        }
+
+        .addvacation__form__date{
+            border-radius: 4px;
+            color: $brown_std;
+            border-color: $scnd_orange_std;
+            width: 100%;
+            height: 140%;
+            font-size: 12pt;
+            
+        }
+    
+    }
+
+
+    .addvacation__button__container{
+        grid-area: button;
+        display: flex; 
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 12vw;
+        .addvacation__button{
+            width: 12vw;
+            height: 4vh;
+            background-color: $yellow;
+            color: $frst_orange_std;
+            border-radius: 6px;
+            border-color: $frst_orange_std;
+            font-size: 12pt;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.mycalendar__options{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-right: 5vw;
+
+    .select__event__visibility{
+        display:flex;
+        align-items: center;
+        padding-left: 2vw;
+        padding-top: 2vh;
+        .label__visibility{
+            font-size: 12pt;
+            color: $brown_std;
+            padding-right: 2vw;
+        }
+        .button__visibility{
+            width: 2vw;
+            height: 2vh;
+        }
+
+        .help__link{
+            grid-area: help;
+            font-size: 10pt;
+            color: $frst_green_std;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 2vw;
+            margin-left: 2vw;
+
+            p{
+                color: $scnd_green_std;
+                padding: 1vw;
+            }
+        }
+    }
+    .mycalendar__button__zone{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        .mycalendar__button{
+            display: block;
+            align-items: flex-end;
+            width: 5vw;
+            height: 5vw;
+            border-radius: 50%;
+            color: $frst_orange_std;
+            background-color: $frst_orange_std;
+            border-color: $scnd_orange_std;
+            cursor: pointer;
+            svg{
+                fill: $scnd_orange_std;
+                width: 25;
+                height: 25;
+            }
+        }
+    }
+    
+
+    [data-title]:hover:after {
+        opacity: 1;
+        transition: all 0.1s ease 0.5s;
+        visibility: visible;
+    }
+    [data-title]:after {
+        content: attr(data-title);
+        background-color: $yellow;
+        color: $frst_orange_std;
+        font-size: 100%;
+        position: absolute;
+        padding: 1px 5px 2px 5px;
+        //bottom: -1.6em;
+        left: -30px;
+        top: -30px;
+        white-space: nowrap;
+        box-shadow: 1px 1px 3px $brown_std;
+        opacity: 0;
+        border: 1px solid $frst_orange_std;
+        z-index: 99999;
+        visibility: hidden;
+    }
+    [data-title] {
+        position: relative;
+    }
+}

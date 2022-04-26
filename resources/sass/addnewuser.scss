@@ -1,0 +1,217 @@
+.addnewuser__view{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "sb ctnt"
+        "sb ctnt";
+}
+
+input:focus {
+    border-color: white;
+    box-shadow:0 0 0 0.1rem white;
+}
+
+
+.addnewuser__content {
+    grid-area: ctnt;
+    display: grid; 
+    grid-template-rows: 0.5fr 3fr;
+    grid-template-areas: 
+        "ttl"
+        "form";
+
+    .addnewuser__title {
+        grid-area: ttl;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 100px;
+        padding-left: 200px;
+        padding-bottom: 50px;
+
+        .addnewuser__title__content{
+            width: 350px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 22pt;
+            font-weight: bold;
+            color: $frst_green_std;
+            
+            .addnewuser__text {
+                text-transform: uppercase;
+                color: $frst_green_std;
+            }
+        }
+    }
+
+    .addnewuser__form {
+        grid-area: form;
+        //height: 33vh;
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 3fr 1fr;
+        grid-template-areas: "form1 form2 img" 
+                            "error form2 button";
+        margin-left: 3vw;
+        margin-top: 3vh;
+
+
+        .addnewuser__img{
+            grid-area: img;
+            height: 30vh;
+            width: 17vw;
+            color: $scnd_orange_std;
+            background-color: $scnd_orange_std;
+            border-color: $frst_orange_std;
+            border-width: 10px;
+            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .addnewuser__button__container{
+            grid-area: button;
+            display: flex; 
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-right: 7vw;
+            .addnewuser__button{
+                width: 12vw;
+                height: 4vh;
+                background-color: $yellow;
+                color: $frst_orange_std;
+                border-radius: 6px;
+                border-color: $frst_orange_std;
+                font-size: 12pt;
+                cursor:pointer;
+            }
+        }
+
+        .adduser__errormsg{
+            grid-area: error; 
+            color: $frst_orange_std;
+            font-weight:bold;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            font-size: 12pt;
+        }
+
+        .form__data{
+            grid-area: form1;
+            padding: 2vw;
+            .addnewuser__form__line {
+                margin-bottom: 30px;
+    
+                .addnewuser__form__element{
+                    margin-top: 20px;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    display: flex;
+                    height: 5vh;
+                    width: 30vw;
+                    align-items: center;
+    
+                    .addnewuser__form__label{
+                        color: $brown_std;
+                        font-size:12pt;
+                        font-weight: bold;
+                    }
+    
+                    .addnewuser__input {
+                        color: $brown_std;
+                        width: 15vw;
+                        height: 3vh;
+                        border-color: $frst_orange_std;
+                    }
+    
+                    input[type=checkbox]:checked{
+                        border-color: white;
+                    }
+    
+                    input:focus {
+                        border-color: $frst_orange_std;
+                        box-shadow: 0 0 0 0.1rem $frst_orange_std;
+                    }
+                }
+            }
+        }
+
+        .form__roles{
+            grid-area: form2; 
+            padding: 2vw;
+            .addnewuser__form__line {
+                margin-bottom: 30px;
+    
+                .addnewuser__form__element{
+                    margin-top: 20px;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    display: flex;
+                    height: 4vh;
+                    width: 8vw;
+                    align-items: center;
+    
+                    .addnewuser__form__label{
+                        color: $brown_std;
+                        font-size:12pt;
+                        font-weight: bold;
+                    }
+    
+                    .addnewuser__input {
+                        width: 2vw;
+                        height: 2vh;
+                        color: $frst_orange_std;
+                        background-color: $frst_orange_std;
+    
+                    }
+    
+                }
+    
+                .addnewuser__form__roles{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding-right: 4vw;
+    
+                    .label__roles{
+                        display: flex;
+                        text-transform: capitalize;
+                        font-size: 11pt;
+                        justify-content: center;
+                        align-items: center;
+                        padding-right: 1vw;
+                        color: $brown_std;
+                    }
+    
+                    .addnewuser__input {
+                        display: flex;
+                        width: 2vw;
+                        height: 2vh;
+                        color: $frst_orange_std;
+                        background-color: $frst_orange_std;
+                        justify-content: center;
+                        align-items: flex-end;
+    
+                    }
+                }
+            }
+        }
+        
+    }
+   
+
+}
+
+
+
+

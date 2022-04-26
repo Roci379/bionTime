@@ -1,0 +1,178 @@
+.myprofile__view{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "sb ctnt"
+        "sb ctnt";
+
+}
+
+.myprofile__content {
+    grid-area: ctnt;
+    display: grid; 
+    grid-template-areas: "ttl img" "data ln" "data logout";
+    grid-template-rows: 1.3fr 1fr 3fr;
+    grid-template-columns: auto 30vw;
+
+    .myprofile__title {
+        grid-area: ttl;
+        position: absolute;
+        left: 400px;
+        top: 80px;
+        height: 15vh;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 37vw;
+        //padding-top: 100px;
+        //padding-left: 200px;
+        //padding-bottom: 50px;
+
+        .myprofile__title__content{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 26pt;
+            font-weight: bold;
+            color: $frst_green_std;
+            
+            .myprofile__text {
+                text-transform: uppercase;
+                color: $frst_green_std;
+            }
+        }
+    }
+
+    .myprofile__userdata{
+        position: absolute;
+        left: 400px;
+        top: 35vh;
+        grid-area: data;
+        margin-left: 5vw;
+        justify-content: center;
+        width: 37vw;
+        .myprofile__userinfo {
+            //display: grid; 
+            //grid-template-columns: 1fr 1.5fr;
+            //justify-content: center;
+            padding-top: 35px;
+            //padding-left: 50px;
+            .myprofile__userinfo__unit {
+                width: auto;
+                padding-bottom: 7vh;
+                display: flex;
+                justify-content: center;
+                align-content: center;                    
+                .userinfo__content {
+                    width: 80%;
+                    display: grid; 
+                    grid-template-columns: 1fr 1fr;
+                    font-size: 14pt;
+                    color: $brown_std;
+                    float: left;
+                    .key {
+                        text-transform: capitalize;
+                        font-size: 16pt;
+                    }
+                    .value {
+                        display: flex;
+                        justify-content: flex-end;
+                        font-size: 14pt;
+                        color: $brown_std;
+                    }
+                 }
+                
+            }
+        }
+    }
+
+    .user__image {
+        grid-area: img;
+        .white__triangle{
+            width: 0; 
+            height: 0; 
+            position: absolute;
+            border-left: 20vw solid transparent;
+            border-right: 20vw solid transparent;
+            border-top: 20vw solid white;
+            transform: rotate(45deg);
+            margin-top: 8vw;
+            right: 1vw;
+            top: 1vw;
+        }
+        //width: 0; 
+        //height: 0; 
+        //border-left: 20px solid transparent;
+        //border-right: 20px solid transparent;
+        //border-top: 20px solid #f00;
+        //background-image: url("/images/Profile image.png");
+        display: flex;
+        justify-content: flex-start;
+        //height: 30vw;
+        //width: 30vw;
+        img {
+            position: absolute;
+            max-width: 100%;
+            max-height: 100%;
+            height: 26vw;
+            width: 26vw;
+            right: 0px;
+            top: 0px;
+        }
+       
+    }
+    .green__line__img {
+        grid-area: ln;
+        position: absolute;
+        width: 60vw;
+        height: 0px;
+        border-bottom: 10px solid $frst_green_std;
+        transform: rotate(45deg) translate(20vw);
+        right: 1vw;
+        top: 1vw;
+    }
+    
+    .yield{
+        grid-area: logout;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-right: 6vw;
+        padding-bottom: 6vh;
+        font-size: 14pt;
+        color: $scnd_green_std;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .help__link{
+        grid-area: logout;
+        font-size: 12pt;
+        color: $frst_green_std;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        padding-right: 6vw;
+        height: 100px;
+        margin-top: 10vh;
+                
+        p{
+            color: $scnd_green_std;
+            padding: 1vw;
+        }
+    }
+
+}
+
+

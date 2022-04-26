@@ -1,0 +1,104 @@
+.login__layout {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+
+    .help__link{
+        grid-area: help;
+        font-size: 10pt;
+        color: $frst_green_std;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 2vw;
+        p{
+            color: $scnd_green_std;
+            padding: 1vw;
+        }
+    }
+}
+
+.login__img__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/background_logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+       max-width: 400px; 
+       margin-right: 15%;
+    }
+}
+
+.main__layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    
+}
+
+.logoApp {
+    padding: 2vw;
+    margin-top: 6vh;
+}
+
+.form_container {
+    margin-top:7vh;
+    height: 350px;
+    padding: 5vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.form-element {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    height: 7vh;
+}
+
+.form-line {
+    margin-bottom: 10%;
+}
+
+.formLabel {
+    font-size:12pt;
+    color: $brown_std;
+}
+
+.input {
+    width: 12vw;
+    height: 2vh;
+    color: $brown_std;
+}
+
+input:focus {
+    border-color: $frst_green_std;
+    box-shadow: 0 0 0 0.1rem $frst_green_std;
+}
+
+.form.center{
+    height: 80vh;
+}
+
+.logButton {
+    width: 8vw;
+    height: 3vh;
+    background-color: $scnd_green_std;
+    color: $yellow;
+    border-radius: 6px;
+    border-color: $scnd_green_std;
+}

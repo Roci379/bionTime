@@ -1,0 +1,126 @@
+.management__view{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "sb ctnt"
+        "sb ctnt";
+
+}
+
+.management__content {
+    grid-area: ctnt;
+    display: grid; 
+    grid-template-rows: 300px 100px 1.5fr 200px;
+    grid-template-areas: "ttl" "srch" "table" "add";
+
+
+    .management__title {
+        grid-area: ttl;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding-right: 3vw;
+
+        .help__link{
+            grid-area: help;
+            font-size: 12pt;
+            color: $frst_green_std;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+            padding-right: 10vw;
+                    
+            p{
+                color: $scnd_green_std;
+                padding: 1vw;
+            }
+        }
+
+        .management__title__content{
+            width: 350px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 22pt;
+            font-weight: bold;
+            color: $frst_green_std;
+            
+            .management__text {
+                text-transform: uppercase;
+                color: $frst_green_std;
+            }
+        }
+    }
+
+    .managament__search {
+        grid-area: srch;
+        display: flex; 
+        align-items: center;
+        padding-left: 300px;
+        .management__input {
+            background-image: url('/images/loupe.png');
+            background-size: 25px;
+            background-position: 265px 10px;
+            background-repeat: no-repeat;
+            width: 250px;
+            font-size: 12pt;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid $frst_orange_std;
+            border-radius: 7px;
+            margin-bottom: 12px;
+        }
+        
+    }
+
+    .management__table {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+
+    .management__adduser {
+        display: flex; 
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 200px;
+        .management__adduser__button {
+            width: 12vw;
+            height: 4vh;
+            background-color: $yellow;
+            color: $frst_orange_std;
+            border-radius: 6px;
+            border-color: $frst_orange_std;
+            font-size: 12pt;
+            cursor:pointer;
+        }
+
+    }
+}
+
+
+.management__button__icon {
+    padding-left: 8pt;
+    margin-top: 10pt;
+
+    &.edit__icon {
+        color: $brown_std; 
+    }
+
+    &.delete__icon {
+        color: $frst_orange_std;
+    }
+}
+
+

@@ -1,0 +1,48 @@
+/* General structure of views */
+
+.bmk__view{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 220px auto;
+    grid-template-areas:
+        "sb ub"
+        "sb ctnt";
+
+    .bmk__view__content {
+        padding: 30px;
+    }
+
+}
+
+/* Leftbar */
+
+.options__container{
+    position: relative;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+    li {
+        a {
+            display: grid;
+            grid-template-columns: 1fr 32px;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+
+
+
+/* UpperMenu */
+
+.timerbar__menu {
+    grid-area: ub;
+}
